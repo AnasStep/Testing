@@ -19,6 +19,8 @@ public class MessagePage {
 
     public void enterTheMessage (WebDriver webDriver, String msg) {
         WebElement webElement;
+        webElement = webDriver.findElement(FIRST_USER_TO_WRITE_XPATH);
+        webElement.click();
         webElement = webDriver.findElement(WRITE_MESSAGE_XPATH);
         webElement.sendKeys(msg);
     }
