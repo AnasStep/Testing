@@ -8,6 +8,8 @@ public class MessagePage {
     private static final By MESSAGE_XPATH = By.xpath("(//*[contains(@class, 'content chat-messages')]//" +
             "msg-message-list//div)[last()]");
     private static final By WRITE_MESSAGE_XPATH = By.xpath("//*[contains(@data-tsid, 'write-msg_portlet')]");
+    private static final By FIRST_USER_TO_WRITE_XPATH = By.xpath("//*[contains(@data-tsid, 'write-msg_portlet')]");
+
     private String message;
     private String url;
 

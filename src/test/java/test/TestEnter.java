@@ -14,7 +14,7 @@ public class TestEnter {
     @Test
     public void testLogin() {
         WebDriver driver = new ChromeDriver();
-        User user = new User("89897133605", "cntgfytyrj4859", "Анастасия Степаненко");
+        User user = new User("8", "c9", "Анаепаненко");
         driver.get("https://ok.ru");
         LoginPage loginPage = new LoginPage();
         MainPage mainPage = loginPage.login(driver, user);
