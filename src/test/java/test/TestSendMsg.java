@@ -15,7 +15,7 @@ public class TestSendMsg {
     @Test
     public void testSendMessage () {
         WebDriver driver = new ChromeDriver();
-        User user = new User("89897133605", "cntgfytyrj4859", "Анастасия Степаненко");
+        User user = new User("89897135", "cntgfyt859", "Анастаситепаненко");
         driver.get("https://ok.ru");
         LoginPage loginPage = new LoginPage();
         MainPage mainPage = loginPage.login(driver, user);
