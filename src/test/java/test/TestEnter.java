@@ -24,21 +24,6 @@ public class TestEnter {
         MainPage mainPage = new MainPage(driver);
         loginPage.login(driver, user);
         mainPage.load();
-        //driver.get(mainPage.getUrl());
-        //try {
-            // если ввести неправильно пароль и/или логин, то отображается Tests Passed, что неверно, поэтому
-            // хотела детализировать ошибки (все закомментированное),
-            // т.е. показать, что введены неправильные логин или пароль, но напоролась
-            // на вопрос о необходимости такой логики из-за уже существующей проверки по имени пользователя
-            // mainPage.checkUrl("https://ok.ru/feed"); -- попытка проверить по url
-
-            assertEquals(mainPage.getFullUserName(driver), user.getName());
-        //}
-        //catch (NoSuchElementException e) {
-        //    System.out.println("Can't enter to the page correctly");
-        //}
-        //catch (RuntimeException e) {
-        //    System.out.println("Can't enter to the page");
-        //}
+        assertEquals(mainPage.getFullUserName(driver), user.getName());
     }
 }
