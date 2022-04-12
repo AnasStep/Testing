@@ -16,9 +16,9 @@ public class TestSendMsg {
     public void testSendMessage () {
         WebDriver driver = new ChromeDriver();
         User user = new User.Builder()
-                .login("89897133605")
-                .password("cntgfytyrj4859")
-                .name("Анастасия Степаненко")
+                .login("898")
+                .password("cn59")
+                .name("А")
                 .build();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
