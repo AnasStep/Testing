@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import pages.BasePage;
 import pages.message.MessagePage;
 
-public class MainPage extends BasePage {
+public class MainPage extends BasePage { //extends LoadableComponent????
     private static final By FULL_USER_NAME_XPATH = By.xpath("//*[contains(@class, 'tico ellip')]");
     private static final By MSG_PANEL_XPATH = By.xpath("//*[contains(@class, 'toolbar_nav_i') and " +
             "contains(@data-l, 't,messages')]");
