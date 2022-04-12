@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import utils.User;
-import utils.pages.LoginPage;
-import utils.pages.MainPage;
-import utils.pages.MessagePage;
+import pages.login.LoginPage;
+import pages.login.MainPage;
+import pages.message.MessagePage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,12 +15,16 @@ public class TestSendMsg {
     @Test
     public void testSendMessage () {
         WebDriver driver = new ChromeDriver();
-        User user = new User("89897135", "cntgfyt859", "Анастаситепаненко");
-        driver.get("https://ok.ru");
-        LoginPage loginPage = new LoginPage();
+        User user = new User.Builder()
+                .login("89897133605")
+                .password("cntgfytyrj4859")
+                .name("Анастасия Степаненко")
+                .build();
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.load();
         MainPage mainPage = loginPage.login(driver, user);
         MessagePage messagePage = mainPage.openMessagePanel(driver);
-        messagePage.enterTheMessage(driver, "msg");
-        assertEquals(messagePage.getMessage(driver),"msg");
+        messagePage.writeTheText(driver, "msg");
+        assertEquals(messagePage.getText(driver),"msg");
     }
 }

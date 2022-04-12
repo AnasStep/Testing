@@ -1,16 +1,22 @@
-package utils.pages;
+package pages.login;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
+import pages.message.MessagePage;
 
-public class MainPage {
+public class MainPage extends BasePage {
     private static final By FULL_USER_NAME_XPATH = By.xpath("//*[contains(@class, 'tico ellip')]");
-    private static final By MSG_PANEL_XPATH = By.xpath("//*[contains(@class, 'toolbar_nav_i') and" +
+    private static final By MSG_PANEL_XPATH = By.xpath("//*[contains(@class, 'toolbar_nav_i') and " +
             "contains(@data-l, 't,messages')]");
 
     private String fullUserName;
     private String url;
+
+    public MainPage(WebDriver webDriver) {
+        super(webDriver);
+    }
 
     MainPage(String url) {
         this.url = url;
@@ -33,10 +39,7 @@ public class MainPage {
         return url;
     }
 
-    //public boolean checkUrl(String url) {
-    //    if (url.equals(this.url)) {
-    //        return true;
-    //    }
-    //    else throw new RuntimeException();
-    //}
+    public boolean checkUrl(String url) {
+        return (url.equals(this.url));
+        }
 }
